@@ -1,0 +1,35 @@
+.autobases {
+  background-color: black;
+  padding         : 30px 0 10px 0;
+  font-size       : 20px;
+  text-transform  : uppercase;
+  display         : flex;
+  align-items     : center;
+  flex-wrap       : wrap;
+  position        : sticky;
+  top             : 0;
+  z-index         : 2;
+}
+
+.autobases button {
+  border       : none;
+  padding      : 0;
+  background   : none;
+  font-size    : 16px;
+  border-right : 1px solid grey;
+  margin-left  : 15px;
+  padding-right: 10px;
+  color        : #dbaa2c;
+}
+.autobases button:last-child {
+  border-right : none;
+}
+.autobases button:hover {
+  text-decoration: underline;
+  color          : #b8cd32;
+}
+
+.autobases button.selected {
+  text-decoration: underline;
+  color          : #72e339;
+}

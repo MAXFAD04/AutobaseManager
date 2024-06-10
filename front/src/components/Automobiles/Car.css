@@ -1,0 +1,243 @@
+.cars-header {
+  display        : flex;
+  justify-content: space-between;
+  flex-wrap      : wrap;
+  align-items    : flex-end;
+}
+
+.cars-header {
+  margin-bottom: .5em;  
+  display: flex;
+  align-items: center;
+}
+
+.cars-header>button {
+  margin-left: .5em;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid white;
+  font-weight: bold;
+  color: white;
+  font-size: 1.5em;
+  transition: transform .1s;
+}
+
+.cars-header>button:hover {
+  color: yellow;
+  border-color: yellow;
+  transform: scale(1.2);
+}
+
+.cars-header>button:active {
+  color: orange;
+  border-color: orange;
+  transform: scale(1);
+}
+
+.cars-list {
+  display              : grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap             : 10px;
+}
+
+.filters {
+  display       : flex;
+  gap           : 10px;
+  color         : #77cde7;
+  text-transform: capitalize;
+  align-items   : center;
+  flex-wrap     : wrap;
+  margin-top    : 1em;
+}
+.filters > div{
+  display       : flex;
+  flex-wrap     : wrap;
+  color         : #77cde7;
+  text-transform: capitalize;
+  border        : 1px solid #b0b0b0;
+  padding       : 10px 5px 5px;
+  border-radius : 5px;
+  position      : relative;
+}
+
+.filters label {
+  text-transform  : uppercase;
+  background-color: #101e2e;
+  position        : absolute;
+  top             : -.75em;
+  left            : 1em;
+  padding         : 0 .5em;
+  font-size       : .85em;
+}
+
+.filters button {
+  border     : none;
+  background : none;
+  color      : white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.filters button:hover {
+  text-decoration: underline;
+}
+
+.car-card {
+  border          : 1px solid #ccc;
+  padding         : 10px;
+  border-radius   : 5px;
+  background-color: #0b043c;
+  position: relative;
+}
+
+.car-card-fuel {
+  width   : 24px;
+  fill    : #65dbd3;
+  position: absolute;
+  top     : 5px;
+  right   : 5px;
+}
+
+.car-card-fuel:hover {
+  fill      : green;
+  transform : scale(1.2);
+  transition: transform .2s;
+}
+
+.car-card-fuel-sel {
+  fill: yellow;
+}
+
+.car-card-fuel-error {
+  fill: red;
+}
+
+.car-number {
+  font-family     : 'Courier New', Courier, monospace;
+  font-weight     : bold;
+  background-color: white;
+  color           : black;
+  padding         : .2em .5em;
+
+}
+
+.is-updated-car {
+  border-color: #38ff46;
+  box-shadow: 0 0 10px #19be24;
+}
+
+.carlist-animate:nth-child(odd) {
+  animation: carlist-animate-odd .5s cubic-bezier(0.165, 0.84, 0.5, 1.2);
+}
+.carlist-animate:nth-child(even) {
+  animation: carlist-animate-even 1s cubic-bezier(0.165, 0.84, 0.5, 1.2);
+}
+
+@keyframes carlist-animate-odd {
+  from {
+    transform: translateY(-20px);
+    opacity  : 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity  : 1;
+  }
+}
+
+@keyframes carlist-animate-even {
+  from {
+    transform: translateY(20px);
+    opacity  : 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity  : 1;
+  }
+}
+
+.add-car-form {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  background-color: #4d1d45f0;
+  box-shadow: 0 0 32px white;
+  border-radius: 10px;
+  border: 1px solid white;
+  animation: modal-animate .7s cubic-bezier(0.19, 1, 0.42, 1.2);
+  display: block;
+  font-size: 1.2em;
+  width: 80%;
+  max-width: 450px;
+}
+
+@keyframes modal-animate {
+  from {
+    transform: translateX(-50%) scale(1.2);
+    opacity  : 0;
+  }
+  to {
+    transform: translateX(-50%) scale(1);
+    opacity  : 1;
+  }
+}
+
+add-car-form h3 {
+  display: block;
+}
+
+.form-row {
+  display    : flex;
+  margin     : 1rem 0;
+  align-items: center;
+}
+.form-row label {
+  flex          : 0 0 7em;
+  text-transform: uppercase;
+  font-size     : .8em;
+}
+
+.form-row input, .form-row select {
+  flex         : 1 1;
+  padding      : .5em 1em;
+  border-radius: 5px;
+}
+
+.form-row button {
+  font-size       : .8em;
+  text-transform  : uppercase;
+  max-width       : 10em;
+  padding         : .8em 1em;
+  align-self      : stretch;
+  font-family     : Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #290b35;
+  color           : white;
+  border-radius   : 10px;
+}
+.form-row button:hover {
+  background-color: #5d2e7c;
+}
+
+.edit-button, .del-button {
+  width: 1.2em;
+  height: 1.2em;
+  fill: #ababab;
+  transition: transform .2s;
+}
+
+.edit-button:hover, .del-button:hover {
+  fill: #fff;
+  transform: scale(1.2);
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 32px;
+  right: 5px;
+}
+
+.del-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
